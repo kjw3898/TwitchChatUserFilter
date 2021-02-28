@@ -20,7 +20,7 @@ You have to reload any opened Twitch.tv pages for the changes to take effect.
 
 ## Known issues
 
-- Settings are not yet implemented
+- Settings are not yet implemented and filters cannot be configured
 - Only the first visited chat will be filtered; A reload is required after navigating to another stream 
 
 ## Notes
