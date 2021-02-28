@@ -44,11 +44,6 @@ var blacklist = ["settings", "wallet", "drops", "subscriptions", "friends", "dir
             return text.replaceAll(/^\s*(.*)\s*$/gi, "$1")
         },
 
-        // Remove single word messages
-        function(text) {
-            return (text.includes(" ")) ? text : ""
-        },
-
         // Remove commands
         function(text) {
             return (text.startsWith("!")) ? "" : text
@@ -62,6 +57,11 @@ var blacklist = ["settings", "wallet", "drops", "subscriptions", "friends", "dir
         // Remove repeating words
         function(text) {
             return text.replaceAll(/\b(\w+)(?:\s+\1\b)+/gi, "$1")
+        },
+      
+        // Remove single word messages
+        function(text) {
+            return (text.includes(" ")) ? text : ""
         },
     ]
 
