@@ -9,6 +9,15 @@ After that, you can [open the raw script file](https://github.com/SapuSeven/Twit
 
 You have to reload any opened Twitch.tv pages for the changes to take effect.
 
+## Available filters
+
+- Remove single word messages
+- Remove commands
+- Reduce repeating characters
+- Remove repeating words
+- Merge repeated emotes
+- Remove single emote messages
+
 ## Known issues
 
 - Settings are not yet implemented
