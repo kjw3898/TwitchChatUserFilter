@@ -41,7 +41,7 @@ var blacklist = ["settings", "wallet", "drops", "subscriptions", "friends", "dir
     const filters = [
         // Trim whitespace
         function(text) {
-            return text.replaceAll(/^\s*(.*)\s*$/gi, "$1")
+            return text.trim()
         },
 
         // Remove commands
