@@ -22,3 +22,7 @@ You have to reload any opened Twitch.tv pages for the changes to take effect.
 
 - Settings are not yet implemented
 - Only the first visited chat will be filtered; A reload is required after navigating to another stream 
+
+## Notes
+
+Messages with purple background indicate an error during filtering.
