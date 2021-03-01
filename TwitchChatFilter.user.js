@@ -39,8 +39,7 @@
     var isBlackListMode = true; // true : blacklist mode (userList message not show), false : whitelist mode (userList message only show)
     function processMessage(node) {
         try {
-            let username = node.querySelector("[data-a-target=chat-message-username]")
-            
+            let username = node.querySelector("[data-a-target=chat-message-username]").getAttribute('data-a-user');
             if((chatUserList.indexOf(username)!=-1)==isBlackListMode){
                 node.style.display = "none"
             }
