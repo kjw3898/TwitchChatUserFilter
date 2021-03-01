@@ -15,8 +15,8 @@
 
 
 
-var userList = ["user1", "user2", "user3"]
-var isBlackListMode = true // true : blacklist mode (userList message not show), false : whitelist mode (userList message only show)
+var chatUserList = ["user1", "user2", "user3"];
+var isBlackListMode = true; // true : blacklist mode (userList message not show), false : whitelist mode (userList message only show)
 (function(code){
     "use strict"
 
@@ -41,7 +41,7 @@ var isBlackListMode = true // true : blacklist mode (userList message not show),
         try {
             let username = node.querySelector("[data-a-target=chat-message-username]")
             
-            if((userList.indexOf(username)!=-1)==isBlackListMode){
+            if((chatUserList.indexOf(username)!=-1)==isBlackListMode){
                 node.style.display = "none"
             }
 
