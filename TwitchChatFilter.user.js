@@ -35,19 +35,26 @@
     }
 
 
-    var chatUserList = ["user1", "user2", "user3"]; //edit here
-    var isBlackListMode = true; // true : blacklist mode (userList message not show), false : whitelist mode (userList message only show)
+    var userWhiteList = ["user1", "user2"];
+    var userBlackList = ["user3", "user4"];
+    let dupNode;
     function processMessage(node) {
         try {
-            let username = node.querySelector("[data-a-target=chat-message-username]").getAttribute('data-a-user');
-            if((chatUserList.indexOf(username)!=-1)==isBlackListMode){
-                node.style.display = "none"
+            let username = node.querySelector("[data-a-target=chat-message-username]").getAttribute('data-a-user')
+            if (userBlackList.indexOf(username) != -1) {
+                node.style.display = "none";
             }
-
+            if (userWhiteList.indexOf(username) != -1) {
+                let fixChat = node.cloneNode(true);
+                dupNode.appendChild(fixChat);
+                if (dupNode.childNodes.length > 10) {
+                    dupNode.removeChild(dupNode.firstChild);
+                }
+            }
         } catch (error) {
             // TODO: Remove try/catch once the code is fully tested
             console.error(error)
-            node.style.background = "rgba(255, 0, 255, 0.2)"
+            node.style.background = "rgba(255, 0, 255, 0.2)";
         }
     }
 
@@ -68,7 +75,10 @@
     waitForElement('.chat-scrollable-area__message-container').then((selector) => {
         observer.observe(selector, {
             childList: true
-        })
+        });
+        selector.classList.add("tw-border-b");
+        let parentChatList = document.querySelector('div.chat-input');
+        dupNode = selector.cloneNode(false);
+        parentChatList.insertBefore(dupNode, parentChatList.firstChild);
     })
 }))
-
